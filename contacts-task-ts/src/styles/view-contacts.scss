@@ -1,0 +1,83 @@
+.mainContainer {
+    display: flex;
+    text-transform: capitalize;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.title {
+    background-color: rgb(205, 230, 243);
+    font-size: 30px;
+    width: 750px;
+    text-align: center;
+}
+
+.firstContainer {
+    margin-right: 5px;
+}
+
+.secondContainer {
+    height: 600px;
+    width: 500px;
+    background-color: rgb(205, 230, 243);
+    border-radius: 8px;
+}
+
+.searchBar {
+    width: 620px;
+    border-radius: 8px;
+    padding: 5px 10px 5px 20px;
+}
+
+.contactList {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.avator-and-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.avator {
+    background-color: rgb(205, 230, 243);
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.names {
+    padding-top: 10px;
+}
+
+.view-and-delete {
+    padding-top: 9px;
+}
+
+.create-new-button {
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.form {
+    padding: 150px;
+    display: flex;
+}
+
+.save-and-back {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.edit-save-back {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
