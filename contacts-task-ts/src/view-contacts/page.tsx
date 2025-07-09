@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 
 interface IContact {
@@ -43,8 +43,21 @@ const Contact: React.FC = () => {
     const [selectedContact, setSelectedContact] = useState<IContact | null>(null);
     const [searchInput, setSearchInput] = useState("");
     const [isEditing, setIsEditing] = useState(false);
+    const [timer, setTimer] = useState(0);
+    const [isRunning, setIsRunning] = useState(false);
+    const intervalRef = useRef(null);
 
-    // Validation state
+    useEffect(() => {
+        if (isRunning) {
+            intervalRef.current = setInterval(() => {
+                setTimer(prev => prev + 1);
+            }, 1000);
+        }
+
+        return () => clearInterval(intervalRef.current);
+    }, [isRunning]);
+
+
     const [errors, setErrors] = useState({
         firstName: "",
         lastName: "",
@@ -196,6 +209,13 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="secondContainer">
+                <div>
+                    <div>Timer:{timer}</div>
+                    <button onClick={() => setIsRunning(true)}>Start</button>
+                    <button onClick={() => setIsRunning(false)}>Pause</button>
+                    <button onClick={() => setTimer(0)}>Reset</button>
+                </div>
+
                 {modal === EView.VIEWCONTACT && selectedContact && (
                     <div className="form">
                         <form>
